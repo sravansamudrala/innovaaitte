@@ -5,24 +5,16 @@ import { Markdown } from 'components/markdown';
 import { ContextAlert } from 'components/context-alert';
 import { getNetlifyContext } from 'utils';
 
-const cards = [
-    //{ text: 'Hello', linkText: 'someLink', href: '/' }
-];
-
 const contextExplainer = `
-The card below is rendered on the server based on the value of \`process.env.CONTEXT\` 
-([docs](https://docs.netlify.com/configure-builds/environment-variables/#build-metadata)):
+Welcome to Innovaitte, where we specialize in delivering cutting-edge AI-driven solutions to empower businesses. Our solutions help optimize business processes, enhance decision-making, and drive sustainable growth.
 `;
 
 const preDynamicContentExplainer = `
-The card content below is fetched by the client-side from \`/quotes/random\` (see file \`app/quotes/random/route.js\`) with a different quote shown on each page load:
+The AI-driven solutions below are fetched from our server, delivering dynamic content that provides businesses with actionable insights, tailored specifically to their needs.
 `;
 
 const postDynamicContentExplainer = `
-On Netlify, Next.js Route Handlers are automatically deployed as [Serverless Functions](https://docs.netlify.com/functions/overview/).
-Alternatively, you can add Serverless Functions to any site regardless of framework, with acccess to the [full context data](https://docs.netlify.com/functions/api/).
-
-And as always with dynamic content, beware of layout shifts & flicker! (here, we aren't...)
+Innovaitte leverages the power of AI to bring intelligent automation and data analytics to businesses across industries. Stay ahead of the curve with our scalable, customized solutions that evolve as your business grows.
 `;
 
 const ctx = getNetlifyContext();
@@ -31,14 +23,14 @@ export default function Page() {
     return (
         <main className="flex flex-col gap-8 sm:gap-16">
             <section className="flex flex-col items-start gap-3 sm:gap-4">
-                <ContextAlert />
-                <h1 className="mb-0">Netlify Platform Starter - Next.js</h1>
-                <p className="text-lg">Get started with Next.js and Netlify in seconds.</p>
+                {/* <ContextAlert /> */}
+                <h1 className="mb-0">Welcome to Innovaitte</h1>
+                <p className="text-lg">Empowering business growth with AI and innovative technology solutions.</p>
                 <Link
-                    href="https://docs.netlify.com/frameworks/next-js/overview/"
+                    href="/about"
                     className="btn btn-lg btn-primary sm:btn-wide"
                 >
-                    Read the Docs
+                    Learn More About Us
                 </Link>
             </section>
             {!!ctx && (
@@ -52,16 +44,9 @@ export default function Page() {
                 <RandomQuote />
                 <Markdown content={postDynamicContentExplainer} />
             </section>
+            {/* Uncomment below to add your own cards */}
             {/* !!cards?.length && <CardsGrid cards={cards} /> */}
         </main>
     );
 }
 
-function RuntimeContextCard() {
-    const title = `Netlify Context: running in ${ctx} mode.`;
-    if (ctx === 'dev') {
-        return <Card title={title} text="Next.js will rebuild any page you navigate to, including static pages." />;
-    } else {
-        return <Card title={title} text="This page was statically-generated at build time." />;
-    }
-}

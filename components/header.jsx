@@ -5,11 +5,11 @@ import githubLogo from 'public/images/github-mark-white.svg';
 
 const navItems = [
     { linkText: 'Home', href: '/' },
-    { linkText: 'Revalidation', href: '/revalidation' },
-    { linkText: 'Image CDN', href: '/image-cdn' },
-    { linkText: 'Edge Function', href: '/edge' },
-    { linkText: 'Blobs', href: '/blobs' },
-    { linkText: 'Classics', href: '/classics' }
+    { linkText: 'About', href: '/about' },
+    { linkText: 'Contact', href: '/image-cdn' },
+    // { linkText: 'Edge Function', href: '/edge' },
+    // { linkText: 'Blobs', href: '/blobs' },
+    // { linkText: 'Classics', href: '/classics' }
 ];
 
 export function Header() {
@@ -34,7 +34,7 @@ export function Header() {
             )}
             <div className="flex-grow justify-end hidden lg:flex lg:mr-1">
                 <Link
-                    href="https://github.com/netlify-templates/next-platform-starter"
+                    href="https://github.com/sravansamudrala/innovaaitte"
                     target="_blank"
                     rel="noopener noreferrer"
                 >
