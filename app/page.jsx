@@ -36,7 +36,7 @@ export default function Page() {
             {!!ctx && (
                 <section className="flex flex-col gap-4">
                     <Markdown content={contextExplainer} />
-                    <RuntimeContextCard />
+                    {/* <RuntimeContextCard /> */}
                 </section>
             )}
             <section className="flex flex-col gap-4">
